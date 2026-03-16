@@ -1,0 +1,88 @@
+{# ============================================================
+   pages/index.njk — Halaman Home
+   Extend layout base, override block content
+   ============================================================ #}
+{% extends "layouts/base.njk" %}
+{% from "partials/macros.njk" import card, badge, btn, alert %}
+
+{% block title %}Home — {{ siteName }}{% endblock %}
+{% block description %}Selamat datang di {{ siteName }}, website modern dengan Nunjucks + Tailwind 4.{% endblock %}
+
+{% block content %}
+
+  {# ── Hero Section ── #}
+  <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-24 sm:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {{ badge("Nunjucks + Tailwind CSS 4", "blue") }}
+      <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight leading-tight">
+        Boilerplate Template<br>
+        <span class="text-blue-600">Mirip Twig</span>, Tanpa Twig
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto">
+        Layout inheritance, partial include, dan macro — semua tersedia dengan Nunjucks. Tidak perlu PHP, framework besar, atau build system yang ribet.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        {{ btn("Mulai Sekarang", "/about.html", "primary") }}
+        {{ btn("Lihat Dokumentasi", "https://mozilla.github.io/nunjucks/", "outline") }}
+      </div>
+    </div>
+  </section>
+
+  {# ── Alert demo ── #}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    {{ alert("Ini contoh komponen alert yang dibuat via macro Nunjucks!", "info") }}
+  </section>
+
+  {# ── Fitur Cards ── #}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900">Fitur Utama</h2>
+      <p class="text-gray-500 mt-1">Semua yang kamu butuhkan untuk memulai project.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {{ card(
+        title="Layout Inheritance",
+        desc="Extend layout base, override block yang diinginkan. Persis seperti {% extends %} di Twig.",
+        icon="🧱",
+        tag="Core",
+        href="/about.html"
+      ) }}
+      {{ card(
+        title="Partial Include",
+        desc="Header dan footer dibuat sekali, di-include ke semua halaman secara otomatis.",
+        icon="🧩",
+        tag="Core",
+        href="/about.html"
+      ) }}
+      {{ card(
+        title="Macro / Component",
+        desc="Buat komponen reusable seperti card, button, badge, alert — dipanggil seperti fungsi.",
+        icon="⚙️",
+        tag="Core",
+        href="/about.html"
+      ) }}
+      {{ card(
+        title="Tailwind CSS 4",
+        desc="Utility-first CSS terbaru. Lebih cepat, lebih kecil, tanpa config file.",
+        icon="🎨",
+        tag="Styling",
+        href="/about.html"
+      ) }}
+      {{ card(
+        title="Hot Reload",
+        desc="Perubahan di template langsung ter-compile ulang. Development experience yang nyaman.",
+        icon="⚡",
+        tag="DX",
+        href="/about.html"
+      ) }}
+      {{ card(
+        title="Static Output",
+        desc="Output akhir berupa HTML statis. Deploy ke mana saja — Netlify, Vercel, cPanel.",
+        icon="🚀",
+        tag="Deploy",
+        href="/about.html"
+      ) }}
+    </div>
+  </section>
+
+{% endblock %}

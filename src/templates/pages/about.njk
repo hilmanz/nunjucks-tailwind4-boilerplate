@@ -1,0 +1,56 @@
+{# ============================================================
+   pages/about.njk — Halaman Tentang
+   ============================================================ #}
+{% extends "layouts/base.njk" %}
+{% from "partials/macros.njk" import badge, btn, alert %}
+
+{% block title %}Tentang — {{ siteName }}{% endblock %}
+
+{% block content %}
+
+  {# ── Page Header ── #}
+  <section class="bg-gray-50 border-b border-gray-200 py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {{ badge("Tentang Kami", "gray") }}
+      <h1 class="mt-4 text-3xl sm:text-4xl font-bold text-gray-900">Tentang {{ siteName }}</h1>
+      <p class="mt-3 text-gray-500 max-w-xl">Halaman ini menggunakan layout yang sama persis dengan halaman Home — header & footer tidak ditulis ulang.</p>
+    </div>
+  </section>
+
+  {# ── Content ── #}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-3xl space-y-6">
+
+      {{ alert("Halaman ini extend layouts/base.njk — header & footer otomatis muncul!", "success") }}
+
+      <h2 class="text-xl font-semibold text-gray-900 pt-4">Cara Kerja Templating</h2>
+      <p class="text-gray-600 leading-relaxed">
+        Boilerplate ini menggunakan <strong>Nunjucks</strong> sebagai template engine. Sintaksnya sangat mirip Twig sehingga mudah dipelajari jika kamu sudah familiar dengan Twig di PHP.
+      </p>
+
+      {# Code example #}
+      <div class="rounded-xl border border-gray-200 overflow-hidden">
+        <div class="bg-gray-800 px-4 py-2 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-red-400"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+          <span class="w-3 h-3 rounded-full bg-green-400"></span>
+          <span class="ml-2 text-xs text-gray-400 font-mono">pages/about.njk</span>
+        </div>
+        <pre class="bg-gray-900 text-green-400 p-4 text-sm font-mono overflow-x-auto"><code>{% raw %}{% extends "layouts/base.njk" %}
+
+{% block title %}Tentang — {{ siteName }}{% endblock %}
+
+{% block content %}
+  <h1>Konten halaman Tentang</h1>
+  {# Header & footer otomatis dari base layout #}
+{% endblock %}{% endraw %}</code></pre>
+      </div>
+
+      <div class="flex gap-3 pt-4">
+        {{ btn("← Kembali ke Home", "/index.html", "outline") }}
+        {{ btn("Lihat Halaman Blog", "/blog.html", "primary") }}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

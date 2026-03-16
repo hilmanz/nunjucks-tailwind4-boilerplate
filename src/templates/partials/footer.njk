@@ -1,0 +1,52 @@
+{# ============================================================
+   partials/footer.njk — Footer global
+   Di-include otomatis oleh layouts/base.njk
+   ============================================================ #}
+<footer class="bg-gray-900 text-gray-400 mt-auto">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      {# Kolom 1: Brand #}
+      <div>
+        <p class="text-white font-bold text-lg mb-3">{{ siteName }}</p>
+        <p class="text-sm leading-relaxed">
+          Boilerplate modern menggunakan Nunjucks + Tailwind CSS 4.
+          Template engine mirip Twig tanpa framework besar.
+        </p>
+      </div>
+
+      {# Kolom 2: Navigasi #}
+      <div>
+        <p class="text-white font-semibold mb-3 text-sm uppercase tracking-widest">Navigasi</p>
+        <ul class="space-y-2">
+          {% for item in nav %}
+            <li>
+              <a href="{{ item.url }}" class="text-sm hover:text-white transition-colors">
+                {{ item.label }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      {# Kolom 3: Kontak #}
+      <div>
+        <p class="text-white font-semibold mb-3 text-sm uppercase tracking-widest">Kontak</p>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="mailto:hello@mysite.com" class="hover:text-white transition-colors">
+              hello@mysite.com
+            </a>
+          </li>
+          <li class="text-gray-500">Bandung, Indonesia</li>
+        </ul>
+      </div>
+    </div>
+
+    {# Bottom bar #}
+    <div class="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-600">
+      <p>&copy; {{ year }} {{ siteName }}. All rights reserved.</p>
+      <p>Built with Nunjucks + Tailwind CSS 4</p>
+    </div>
+  </div>
+</footer>

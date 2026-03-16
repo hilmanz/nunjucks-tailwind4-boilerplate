@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* 
+  Tailwind CSS 4 — tidak perlu tailwind.config.js lagi!
+  Tambahkan custom theme langsung di sini menggunakan CSS variables.
+*/
+
+@theme {
+  /* Custom colors */
+  --color-brand: #2563eb;
+  --color-brand-dark: #1d4ed8;
+
+  /* Custom fonts (opsional, tambahkan @font-face atau Google Fonts di base layout) */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Custom utilities / base styles */
+@layer base {
+  ::selection {
+    background-color: #dbeafe;
+    color: #1e40af;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}

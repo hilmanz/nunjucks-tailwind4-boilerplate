@@ -1,0 +1,24 @@
+{
+  "name": "nunjucks-tailwind4-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate HTML + Tailwind 4 + Nunjucks (Twig-like templating)",
+  "scripts": {
+    "dev": "concurrently \"npm run watch:css\" \"npm run watch:html\" \"npm run serve\"",
+    "build": "npm run build:css && npm run build:html",
+    "build:css": "tailwindcss -i ./src/css/main.css -o ./public/css/main.css --minify",
+    "build:html": "node scripts/build.js",
+    "watch:css": "tailwindcss -i ./src/css/main.css -o ./public/css/main.css --watch",
+    "watch:html": "nodemon --watch src/templates -e njk,html --exec \"node scripts/build.js\"",
+    "serve": "serve public -l 3000"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "nunjucks": "^3.2.4",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "serve": "^14.2.3",
+    "glob": "^10.3.10",
+    "fs-extra": "^11.2.0"
+  }
+}

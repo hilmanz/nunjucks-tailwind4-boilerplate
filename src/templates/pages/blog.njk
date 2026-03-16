@@ -1,0 +1,49 @@
+{# ============================================================
+   pages/blog.njk — Halaman Blog (contoh loop data)
+   ============================================================ #}
+{% extends "layouts/base.njk" %}
+{% from "partials/macros.njk" import card, badge, btn %}
+
+{% block title %}Blog — {{ siteName }}{% endblock %}
+
+{# Data lokal halaman ini — di project nyata bisa dari JSON/API #}
+{% set posts = [
+  { title: "Mengenal Nunjucks sebagai Alternatif Twig", desc: "Pelajari cara pakai Nunjucks untuk HTML templating mirip Twig tanpa memerlukan PHP.", tag: "Tutorial", icon: "📝" },
+  { title: "Tailwind CSS 4 — Apa yang Baru?", desc: "Tailwind v4 hadir dengan performa lebih cepat, konfigurasi lebih sederhana, dan fitur CSS modern.", tag: "CSS", icon: "🎨" },
+  { title: "Static Site Generator vs Template Engine", desc: "Kapan harus pakai SSG seperti 11ty, dan kapan cukup pakai template engine seperti Nunjucks?", tag: "Arsitektur", icon: "🏗️" },
+  { title: "Deploy Static HTML ke Netlify", desc: "Cara mudah deploy output HTML statis dari boilerplate ini ke Netlify dengan continuous deployment.", tag: "Deploy", icon: "🚀" },
+  { title: "Macro Nunjucks untuk Komponen Reusable", desc: "Buat komponen button, card, badge sekali pakai, dipanggil seperti fungsi di seluruh halaman.", tag: "Tutorial", icon: "⚙️" },
+  { title: "Organisasi Folder Template yang Baik", desc: "Struktur folder layouts/, partials/, dan pages/ agar project mudah di-maintain jangka panjang.", tag: "Best Practice", icon: "📁" }
+] %}
+
+{% block content %}
+
+  {# ── Page Header ── #}
+  <section class="bg-gray-50 border-b border-gray-200 py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      {{ badge("Blog", "gray") }}
+      <h1 class="mt-4 text-3xl sm:text-4xl font-bold text-gray-900">Artikel & Tutorial</h1>
+      <p class="mt-3 text-gray-500">{{ posts | length }} artikel tersedia</p>
+    </div>
+  </section>
+
+  {# ── Blog Grid (loop Nunjucks) ── #}
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {% for post in posts %}
+        {{ card(
+          title=post.title,
+          desc=post.desc,
+          icon=post.icon,
+          tag=post.tag,
+          href="#"
+        ) }}
+      {% endfor %}
+    </div>
+
+    <div class="mt-10 text-center">
+      {{ btn("← Kembali ke Home", "/index.html", "outline") }}
+    </div>
+  </section>
+
+{% endblock %}

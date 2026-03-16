@@ -1,0 +1,42 @@
+{# ============================================================
+   layouts/base.njk — Layout utama (seperti base.html.twig)
+   Semua halaman meng-extend layout ini
+   ============================================================ #}
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {# Block untuk override title per halaman #}
+  <title>{% block title %}{{ siteName }}{% endblock %}</title>
+
+  {# Block untuk meta description per halaman #}
+  <meta name="description" content="{% block description %}Website boilerplate menggunakan Nunjucks + Tailwind 4{% endblock %}" />
+
+  <link rel="stylesheet" href="/css/main.css" />
+
+  {# Block untuk tambahan CSS per halaman #}
+  {% block head_extra %}{% endblock %}
+</head>
+<body class="min-h-screen flex flex-col bg-white text-gray-900 antialiased">
+
+  {# ── Header (partial) ── #}
+  {% include "partials/header.njk" %}
+
+  {# ── Konten utama — di-override tiap halaman ── #}
+  <main class="flex-1">
+    {% block content %}
+      <p class="text-center py-20 text-gray-400">Konten halaman belum diisi.</p>
+    {% endblock %}
+  </main>
+
+  {# ── Footer (partial) ── #}
+  {% include "partials/footer.njk" %}
+
+  <script src="/js/main.js"></script>
+
+  {# Block untuk tambahan script per halaman #}
+  {% block scripts %}{% endblock %}
+</body>
+</html>

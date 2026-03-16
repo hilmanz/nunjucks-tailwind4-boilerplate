@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <title>Home — MySite</title>
+
+  
+  <meta name="description" content="Selamat datang di MySite, website modern dengan Nunjucks + Tailwind 4." />
+
+  <link rel="stylesheet" href="/css/main.css" />
+
+  
+  
+</head>
+<body class="min-h-screen flex flex-col bg-white text-gray-900 antialiased">
+
+  
+  
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      
+      <a href="/index.html" class="flex items-center gap-2 font-bold text-xl tracking-tight text-gray-900 hover:text-blue-600 transition-colors">
+        <svg class="w-7 h-7 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        MySite
+      </a>
+
+      
+      <nav class="hidden md:flex items-center gap-1">
+        
+          <a
+            href="/index.html"
+            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+              
+                bg-blue-600 text-white shadow-sm
+              "
+          >
+            Home
+          </a>
+        
+          <a
+            href="/about.html"
+            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+              
+                text-gray-600 hover:text-gray-900 hover:bg-gray-100
+              "
+          >
+            Tentang
+          </a>
+        
+          <a
+            href="/blog.html"
+            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+              
+                text-gray-600 hover:text-gray-900 hover:bg-gray-100
+              "
+          >
+            Blog
+          </a>
+        
+          <a
+            href="/contact.html"
+            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+              
+                text-gray-600 hover:text-gray-900 hover:bg-gray-100
+              "
+          >
+            Kontak
+          </a>
+        
+      </nav>
+
+      
+      <div class="hidden md:flex items-center gap-3">
+        <a href="/contact.html" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors shadow-sm">
+          Hubungi Kami
+        </a>
+      </div>
+
+      
+      <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Toggle menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1">
+      
+        <a
+          href="/index.html"
+          class="px-4 py-2.5 rounded-lg text-sm font-medium transition-colors
+            
+              bg-blue-600 text-white
+            "
+        >
+          Home
+        </a>
+      
+        <a
+          href="/about.html"
+          class="px-4 py-2.5 rounded-lg text-sm font-medium transition-colors
+            
+              text-gray-600 hover:text-gray-900 hover:bg-gray-50
+            "
+        >
+          Tentang
+        </a>
+      
+        <a
+          href="/blog.html"
+          class="px-4 py-2.5 rounded-lg text-sm font-medium transition-colors
+            
+              text-gray-600 hover:text-gray-900 hover:bg-gray-50
+            "
+        >
+          Blog
+        </a>
+      
+        <a
+          href="/contact.html"
+          class="px-4 py-2.5 rounded-lg text-sm font-medium transition-colors
+            
+              text-gray-600 hover:text-gray-900 hover:bg-gray-50
+            "
+        >
+          Kontak
+        </a>
+      
+    </nav>
+  </div>
+</header>
+
+
+  
+  <main class="flex-1">
+    
+
+  
+  <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-24 sm:py-32">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
+  Nunjucks + Tailwind CSS 4
+</span>
+
+      <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight leading-tight">
+        Boilerplate Template<br>
+        <span class="text-blue-600">Mirip Twig</span>, Tanpa Twig
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto">
+        Layout inheritance, partial include, dan macro — semua tersedia dengan Nunjucks. Tidak perlu PHP, framework besar, atau build system yang ribet.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        
+
+<a href="/about.html" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 bg-blue-600 hover:bg-blue-700 text-white shadow-sm">
+  Mulai Sekarang
+</a>
+
+        
+
+<a href="https://mozilla.github.io/nunjucks/" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 border border-gray-300 hover:border-gray-400 text-gray-700 hover:bg-gray-50">
+  Lihat Dokumentasi
+</a>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+
+<div class="flex items-start gap-3 px-4 py-3 rounded-xl border bg-blue-50 border-blue-200 text-blue-800">
+  <span>ℹ️</span>
+  <p class="text-sm font-medium">Ini contoh komponen alert yang dibuat via macro Nunjucks!</p>
+</div>
+
+  </section>
+
+  
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-900">Fitur Utama</h2>
+      <p class="text-gray-500 mt-1">Semua yang kamu butuhkan untuk memulai project.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      
+<a href="/about.html" class="group block p-6 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 bg-white">
+  <div class="flex items-start gap-4">
+    <span class="text-3xl">🧱</span>
+    <div class="flex-1 min-w-0">
+      
+        <span class="inline-block px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full mb-2">Core</span>
+      
+      <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">Layout Inheritance</h3>
+      <p class="text-sm text-gray-500 mt-1 line-clamp-2">Extend layout base, override block yang diinginkan. Persis seperti {% extends %} di Twig.</p>
+    </div>
+  </div>
+</a>
+
+      
+<a href="/about.html" class="group block p-6 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 bg-white">
+  <div class="flex items-start gap-4">
+    <span class="text-3xl">🧩</span>
+    <div class="flex-1 min-w-0">
+      
+        <span class="inline-block px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full mb-2">Core</span>
+      
+      <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">Partial Include</h3>
+      <p class="text-sm text-gray-500 mt-1 line-clamp-2">Header dan footer dibuat sekali, di-include ke semua halaman secara otomatis.</p>
+    </div>
+  </div>
+</a>
+
+      
+<a href="/about.html" class="group block p-6 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 bg-white">
+  <div class="flex items-start gap-4">
+    <span class="text-3xl">⚙️</span>
+    <div class="flex-1 min-w-0">
+      
+        <span class="inline-block px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full mb-2">Core</span>
+      
+      <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">Macro / Component</h3>
+      <p class="text-sm text-gray-500 mt-1 line-clamp-2">Buat komponen reusable seperti card, button, badge, alert — dipanggil seperti fungsi.</p>
+    </div>
+  </div>
+</a>
+
+      
+<a href="/about.html" class="group block p-6 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 bg-white">
+  <div class="flex items-start gap-4">
+    <span class="text-3xl">🎨</span>
+    <div class="flex-1 min-w-0">
+      
+        <span class="inline-block px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full mb-2">Styling</span>
+      
+      <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">Tailwind CSS 4</h3>
+      <p class="text-sm text-gray-500 mt-1 line-clamp-2">Utility-first CSS terbaru. Lebih cepat, lebih kecil, tanpa config file.</p>
+    </div>
+  </div>
+</a>
+
+      
+<a href="/about.html" class="group block p-6 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 bg-white">
+  <div class="flex items-start gap-4">
+    <span class="text-3xl">⚡</span>
+    <div class="flex-1 min-w-0">
+      
+        <span class="inline-block px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full mb-2">DX</span>
+      
+      <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">Hot Reload</h3>
+      <p class="text-sm text-gray-500 mt-1 line-clamp-2">Perubahan di template langsung ter-compile ulang. Development experience yang nyaman.</p>
+    </div>
+  </div>
+</a>
+
+      
+<a href="/about.html" class="group block p-6 rounded-2xl border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 bg-white">
+  <div class="flex items-start gap-4">
+    <span class="text-3xl">🚀</span>
+    <div class="flex-1 min-w-0">
+      
+        <span class="inline-block px-2 py-0.5 text-xs font-medium bg-blue-100 text-blue-700 rounded-full mb-2">Deploy</span>
+      
+      <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors truncate">Static Output</h3>
+      <p class="text-sm text-gray-500 mt-1 line-clamp-2">Output akhir berupa HTML statis. Deploy ke mana saja — Netlify, Vercel, cPanel.</p>
+    </div>
+  </div>
+</a>
+
+    </div>
+  </section>
+
+
+  </main>
+
+  
+  
+<footer class="bg-gray-900 text-gray-400 mt-auto">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      
+      <div>
+        <p class="text-white font-bold text-lg mb-3">MySite</p>
+        <p class="text-sm leading-relaxed">
+          Boilerplate modern menggunakan Nunjucks + Tailwind CSS 4.
+          Template engine mirip Twig tanpa framework besar.
+        </p>
+      </div>
+
+      
+      <div>
+        <p class="text-white font-semibold mb-3 text-sm uppercase tracking-widest">Navigasi</p>
+        <ul class="space-y-2">
+          
+            <li>
+              <a href="/index.html" class="text-sm hover:text-white transition-colors">
+                Home
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about.html" class="text-sm hover:text-white transition-colors">
+                Tentang
+              </a>
+            </li>
+          
+            <li>
+              <a href="/blog.html" class="text-sm hover:text-white transition-colors">
+                Blog
+              </a>
+            </li>
+          
+            <li>
+              <a href="/contact.html" class="text-sm hover:text-white transition-colors">
+                Kontak
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+
+      
+      <div>
+        <p class="text-white font-semibold mb-3 text-sm uppercase tracking-widest">Kontak</p>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="mailto:hello@mysite.com" class="hover:text-white transition-colors">
+              hello@mysite.com
+            </a>
+          </li>
+          <li class="text-gray-500">Bandung, Indonesia</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-600">
+      <p>&copy; 2026 MySite. All rights reserved.</p>
+      <p>Built with Nunjucks + Tailwind CSS 4</p>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="/js/main.js"></script>
+
+  
+  
+</body>
+</html>

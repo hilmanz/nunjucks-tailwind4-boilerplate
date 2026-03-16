@@ -1,0 +1,68 @@
+{# ============================================================
+   partials/header.njk — Header global
+   Di-include otomatis oleh layouts/base.njk
+   ============================================================ #}
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+
+      {# Logo #}
+      <a href="/index.html" class="flex items-center gap-2 font-bold text-xl tracking-tight text-gray-900 hover:text-blue-600 transition-colors">
+        <svg class="w-7 h-7 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        {{ siteName }}
+      </a>
+
+      {# Desktop Nav #}
+      <nav class="hidden md:flex items-center gap-1">
+        {% for item in nav %}
+          <a
+            href="{{ item.url }}"
+            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+              {% if item.active %}
+                bg-blue-600 text-white shadow-sm
+              {% else %}
+                text-gray-600 hover:text-gray-900 hover:bg-gray-100
+              {% endif %}"
+          >
+            {{ item.label }}
+          </a>
+        {% endfor %}
+      </nav>
+
+      {# CTA Button #}
+      <div class="hidden md:flex items-center gap-3">
+        <a href="/contact.html" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors shadow-sm">
+          Hubungi Kami
+        </a>
+      </div>
+
+      {# Mobile menu toggle #}
+      <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors" aria-label="Toggle menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  {# Mobile Nav #}
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1">
+      {% for item in nav %}
+        <a
+          href="{{ item.url }}"
+          class="px-4 py-2.5 rounded-lg text-sm font-medium transition-colors
+            {% if item.active %}
+              bg-blue-600 text-white
+            {% else %}
+              text-gray-600 hover:text-gray-900 hover:bg-gray-50
+            {% endif %}"
+        >
+          {{ item.label }}
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
